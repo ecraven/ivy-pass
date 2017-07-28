@@ -68,7 +68,7 @@ Default PASSWORD-LENGTH is ‘password-store-password-length’."
 
 (defun ivy-pass--delete-action (key)
   "Delete entry for KEY."
-  (when (yes-or-no-p "Really delete the key?")
+  (when (yes-or-no-p (format "Really delete the entry `%s'?" key))
     (password-store-remove key)))
 
 (defun ivy-pass--rename-action (key)
