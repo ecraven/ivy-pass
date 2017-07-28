@@ -1,10 +1,10 @@
-;;; ivy-pass.el --- Use ivy as an interface for the pass password store  -*- lexical-binding: t -*-
+;;; ivy-pass.el --- ivy interface for pass -*- lexical-binding: t -*-
 
 ;; Author: ecraven
 ;; URL: https://github.com/ecraven/ivy-pass/
-;; Package-Requires: ((ivy "0.8.0"))
+;; Package-Requires: ((emacs "24") (ivy "0.8.0") (password-store "20151027.1449"))
 ;; Version: 0.1
-;; Keywords: pass, password
+;; Keywords: pass, password, convenience, data
 
 ;; This file is not part of GNU Emacs.
 
@@ -90,4 +90,4 @@ Default PASSWORD-LENGTH is ‘password-store-password-length’."
                 :keymap ivy-pass-map))
 
 (provide 'ivy-pass)
-;;; ivy-pass ends here
+;;; ivy-pass.el ends here
