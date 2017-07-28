@@ -80,6 +80,7 @@ Default PASSWORD-LENGTH is ‘password-store-password-length’."
   "Kill the password of the entry for KEY."
   (password-store-copy key))
 
+;;;###autoload
 (defun ivy-pass ()
   "Select an entry and copy its password to the kill ring."
   (interactive)
