@@ -1,7 +1,8 @@
 ;;; ivy-pass.el --- Use ivy as an interface for the pass password store  -*- lexical-binding: t -*-
 
+;; Author: ecraven
 ;; URL: https://github.com/ecraven/ivy-pass/
-;; Package-Requires: (ivy)
+;; Package-Requires: ((ivy "0.8.0"))
 ;; Version: 0.1
 ;; Keywords: pass, password
 
