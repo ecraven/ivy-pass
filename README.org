@@ -1,4 +1,5 @@
 * ivy-pass
+#+html: <p align="center"><img src="https://melpa.org/packages/ivy-pass-badge.svg" /></p>
 ** Quick start
 Install, configure and initialize pass according to https://www.passwordstore.org/
 
