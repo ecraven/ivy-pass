@@ -75,7 +75,7 @@ Default PASSWORD-LENGTH is ‘password-store-password-length’."
 (defun ivy-pass--rename-action (key)
   "Rename entry for KEY."
   (let ((new-name (read-string (format "Rename `%s' to: " key) key)))
-      (password-store-rename key new-name)))
+    (password-store-rename key new-name)))
 
 (defun ivy-pass--password-action (key)
   "Kill the password of the entry for KEY."
@@ -86,10 +86,10 @@ Default PASSWORD-LENGTH is ‘password-store-password-length’."
   "Select an entry and copy its password to the kill ring."
   (interactive)
   (ivy-read "Copy password of entry: "
-                (password-store-list (password-store-dir))
-                :require-match t
-                :action #'ivy-pass--password-action
-                :keymap ivy-pass-map))
+            (password-store-list (password-store-dir))
+            :require-match t
+            :action #'ivy-pass--password-action
+            :keymap ivy-pass-map))
 
 (provide 'ivy-pass)
 ;;; ivy-pass.el ends here
