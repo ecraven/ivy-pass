@@ -84,7 +84,7 @@ Default PASSWORD-LENGTH is ‘password-store-password-length’."
 (defun ivy-pass ()
   "Select an entry and copy its password to the kill ring."
   (interactive)
-  (ivy-read "Kill password of entry: "
+  (ivy-read "Copy password of entry: "
                 (password-store-list (password-store-dir))
                 :require-match t
                 :action #'ivy-pass--password-action
