@@ -28,6 +28,7 @@
 
 ;;; Code:
 (require 'ivy)
+(require 'password-store)
 
 (defvar ivy-pass-map (make-sparse-keymap))
 
