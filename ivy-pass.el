@@ -78,7 +78,7 @@ Default PASSWORD-LENGTH is ‘password-store-password-length’."
     (password-store-rename key new-name)))
 
 (defun ivy-pass--password-action (key)
-  "Kill the password of the entry for KEY."
+  "Add password for KEY to kill ring."
   (password-store-copy key))
 
 ;;;###autoload
