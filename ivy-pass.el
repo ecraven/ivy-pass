@@ -25,10 +25,12 @@
 ;; - add an entry (a)
 ;; - rename an entry (r)
 ;; - generate a new entry (g)
+;; - copy an entry's otp token (!)
 
 ;;; Code:
 (require 'ivy)
 (require 'password-store)
+(require 'password-store-otp)
 
 (defvar ivy-pass-map (make-sparse-keymap))
 
@@ -48,7 +50,10 @@
     "rename")
    ("g"
     ivy-pass--generate-action
-    "generate")))
+    "generate")
+   ("!"
+    ivy-pass--copy-otp-token-action
+    "copy otp token")))
 
 (defun ivy-pass--add-action (key)
   "Ask for a new key based on KEY, then edit it."
@@ -80,6 +85,10 @@ Default PASSWORD-LENGTH is ‘password-store-password-length’."
 (defun ivy-pass--password-action (key)
   "Add password for KEY to kill ring."
   (password-store-copy key))
+
+(defun ivy-pass--copy-otp-token-action (key)
+  "Copy password otp for KEY to kill ring."
+  (password-store-otp-token-copy key))
 
 ;;;###autoload
 (defun ivy-pass ()
