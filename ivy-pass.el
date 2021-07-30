@@ -46,6 +46,9 @@
    ("r"
     ivy-pass--rename-action
     "rename")
+   ("b"
+    ivy-pass--browse-url-action
+    "browse url")
    ("g"
     ivy-pass--generate-action
     "generate")))
@@ -76,6 +79,10 @@ Default PASSWORD-LENGTH is ‘password-store-password-length’."
   "Rename entry for KEY."
   (let ((new-name (read-string (format "Rename `%s' to: " key) key)))
     (password-store-rename key new-name)))
+
+(defun ivy-pass--browse-url-action (key)
+  "Browse url field of KEY."
+  (password-store-url key))
 
 (defun ivy-pass--password-action (key)
   "Add password for KEY to kill ring."
