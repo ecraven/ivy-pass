@@ -48,7 +48,13 @@
     "rename")
    ("g"
     ivy-pass--generate-action
-    "generate")))
+    "generate")
+   ("u"
+    ivy-pass--username-action
+    "username")
+   ("c"
+    ivy-pass--choose-field-action
+    "choose field")))
 
 (defun ivy-pass--add-action (key)
   "Ask for a new key based on KEY, then edit it."
@@ -80,6 +86,14 @@ Default PASSWORD-LENGTH is ‘password-store-password-length’."
 (defun ivy-pass--password-action (key)
   "Add password for KEY to kill ring."
   (password-store-copy key))
+
+(defun ivy-pass--username-action (key)
+  "Add username for KEY to kill ring."
+  (password-store-copy-field key "username"))
+
+(defun ivy-pass--choose-field-action (key)
+  "Choose a field from KEY's entry and copy its value to kill ring."
+  (password-store-copy-field key (password-store-read-field key)))
 
 ;;;###autoload
 (defun ivy-pass ()
