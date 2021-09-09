@@ -40,6 +40,9 @@
    ("d"
     ivy-pass--delete-action
     "delete")
+   ("f"
+    ivy-pass--field-action
+    "copy field")
    ("a"
     ivy-pass--add-action
     "add")
@@ -49,6 +52,11 @@
    ("g"
     ivy-pass--generate-action
     "generate")))
+
+(defun ivy-pass--field-action (key)
+  "Copy a specific field from the KEY entry."
+  (let ((field (password-store-read-field key)))
+    (password-store-copy-field key field)))
 
 (defun ivy-pass--add-action (key)
   "Ask for a new key based on KEY, then edit it."
