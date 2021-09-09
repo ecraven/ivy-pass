@@ -13,3 +13,4 @@ The default action is to copy the password to the kill ring.
 - add an entry (=a=)
 - rename an entry (=r=)
 - generate a new entry (=g=)
+- copy a specific field within the entry (=f=)
